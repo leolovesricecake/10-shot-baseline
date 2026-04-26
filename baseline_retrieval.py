@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 import re
+from pathlib import Path
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from typing import List, Sequence, Tuple
@@ -88,7 +89,7 @@ class SemanticRetriever(BaseRetriever):
     def build(
         cls,
         train_texts: Sequence[str],
-        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+        model_name: str = '/mnt/huawei/ymb/model/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf',
         batch_size: int = 64,
     ) -> "SemanticRetriever":
         from sentence_transformers import SentenceTransformer  # type: ignore
@@ -125,19 +126,27 @@ class SemanticRetriever(BaseRetriever):
 def build_retriever(
     train_texts: Sequence[str],
     backend: str = "auto",
-    semantic_model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+    semantic_model_name: str = '/mnt/huawei/ymb/model/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf',
 ) -> Tuple[BaseRetriever, str]:
     backend = backend.lower().strip()
     if backend not in {"auto", "semantic", "bm25"}:
         raise ValueError(f"Unsupported retrieval backend: {backend}")
 
-    if backend in {"auto", "semantic"}:
-        try:
-            retriever = SemanticRetriever.build(train_texts, model_name=semantic_model_name)
-            return retriever, "semantic"
-        except Exception:
-            if backend == "semantic":
-                raise
+    model_path = Path(str(semantic_model_name)).expanduser()
+
+    if backend == "semantic":
+        retriever = SemanticRetriever.build(train_texts, model_name=semantic_model_name)
+        return retriever, "semantic"
+
+    if backend == "auto":
+        # In auto mode, only attempt semantic retrieval with a local model path.
+        # This avoids unstable remote downloads during batch experiments.
+        if model_path.exists():
+            try:
+                retriever = SemanticRetriever.build(train_texts, model_name=str(model_path))
+                return retriever, "semantic"
+            except Exception:
+                pass
 
     retriever = BM25Retriever.build(train_texts)
     return retriever, "bm25"

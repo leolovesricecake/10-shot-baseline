@@ -6,9 +6,17 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 DATASETS_ROOT="${1:-${REPO_ROOT}/datasets}"
 OUTPUT_ROOT="${2:-${REPO_ROOT}/results}"
+CUDA_DEVICE="${3:-${CUDA_VISIBLE_DEVICES:-0}}"
+
+if [[ "${CUDA_DEVICE}" == *","* ]] || [[ "${CUDA_DEVICE}" =~ [[:space:]] ]]; then
+  echo "ERROR: only a single CUDA device is allowed, got '${CUDA_DEVICE}'" >&2
+  exit 1
+fi
+export CUDA_VISIBLE_DEVICES="${CUDA_DEVICE}"
 
 python "${REPO_ROOT}/run_cot.py" \
   --datasets-root "${DATASETS_ROOT}" \
   --output-root "${OUTPUT_ROOT}" \
+  --cuda-device "${CUDA_DEVICE}" \
   --models glm4_9b llama3_1_8b \
   --skip-missing-datasets

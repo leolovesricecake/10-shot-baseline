@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import gc
 import importlib.util
+import os
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -56,6 +57,7 @@ class RunnerOptions:
     top_p: float
     dry_run: bool
     overwrite: bool
+    cuda_device: Optional[str]
     shot_k: int
     random_seed: int
     retrieval_backend: str
@@ -147,6 +149,11 @@ def parse_args(default_baselines: Optional[Sequence[str]] = None) -> argparse.Na
     parser.add_argument("--top-p", type=float, default=1.0, help="Sampling top-p.")
     parser.add_argument("--dry-run", action="store_true", help="Skip model inference.")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing result files.")
+    parser.add_argument(
+        "--cuda-device",
+        default=None,
+        help="Single GPU index to use, e.g. 0. Multi-GPU values are not allowed.",
+    )
     parser.add_argument("--shot-k", type=int, default=10, help="Number of in-context demonstrations.")
     parser.add_argument("--random-seed", type=int, default=42, help="Random seed for random baseline.")
     parser.add_argument(
@@ -194,6 +201,7 @@ def build_runner_options(args: argparse.Namespace, registry: Dict[str, DatasetSp
         top_p=float(args.top_p),
         dry_run=bool(args.dry_run),
         overwrite=bool(args.overwrite),
+        cuda_device=str(args.cuda_device) if args.cuda_device is not None else None,
         shot_k=max(1, int(args.shot_k)),
         random_seed=int(args.random_seed),
         retrieval_backend=str(args.retrieval_backend),
@@ -202,6 +210,36 @@ def build_runner_options(args: argparse.Namespace, registry: Dict[str, DatasetSp
         sc_temperature=float(args.sc_temperature),
         sc_top_p=float(args.sc_top_p),
     )
+
+
+def _normalize_single_cuda_device(value: str) -> str:
+    device = str(value).strip()
+    if not device:
+        raise ValueError("CUDA device is empty.")
+    if "," in device:
+        raise ValueError(f"Only single GPU is allowed, got CUDA device list: '{value}'.")
+    if any(ch.isspace() for ch in device):
+        raise ValueError(f"CUDA device must be a single token, got: '{value}'.")
+    if not device.lstrip("-").isdigit():
+        raise ValueError(f"CUDA device must be an integer index, got: '{value}'.")
+    return device
+
+
+def configure_single_gpu(options: RunnerOptions) -> str:
+    if options.cuda_device is not None:
+        device = _normalize_single_cuda_device(options.cuda_device)
+        os.environ["CUDA_VISIBLE_DEVICES"] = device
+        return device
+
+    env_value = os.environ.get("CUDA_VISIBLE_DEVICES", "").strip()
+    if env_value:
+        device = _normalize_single_cuda_device(env_value)
+        os.environ["CUDA_VISIBLE_DEVICES"] = device
+        return device
+
+    # Default to single card 0 when not explicitly provided.
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+    return "0"
 
 
 def load_task_registry() -> Dict[str, DatasetSpec]:
@@ -626,6 +664,8 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
     if unknown_datasets:
         raise ValueError(f"Unknown datasets: {unknown_datasets}. Supported: {sorted(registry.keys())}")
 
+    configured_cuda_device = configure_single_gpu(options)
+
     print(f"[INFO] Baselines: {options.baselines}")
     print(f"[INFO] Models: {options.models}")
     print(f"[INFO] Datasets root: {options.datasets_root}")
@@ -634,6 +674,7 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
     print(f"[INFO] Dry-run: {options.dry_run}")
     print(f"[INFO] Overwrite: {options.overwrite}")
     print(f"[INFO] Skip missing datasets: {options.skip_missing_datasets}")
+    print(f"[INFO] CUDA_VISIBLE_DEVICES: {configured_cuda_device}")
 
     for model_alias in options.models:
         tokenizer = None
