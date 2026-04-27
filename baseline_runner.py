@@ -7,6 +7,8 @@ import gc
 import importlib.util
 import os
 import time
+import traceback
+from datetime import datetime
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
@@ -17,10 +19,13 @@ from tqdm import tqdm
 from baseline_runner_config import (
     DEFAULT_BASELINES,
     DEFAULT_MODELS,
+    DEFAULT_RETRIEVAL_MODEL_NAME,
     MODEL_REGISTRY,
     PUBLIC_RESULT_COLUMNS,
     TASK_ENTRY_PATHS,
 )
+from baseline_logging import RunLogger, build_run_id
+from baseline_retrieval import RetrievalInitializationError
 from baseline_strategies import (
     InferenceEngineProtocol,
     STRATEGY_REGISTRY,
@@ -43,6 +48,7 @@ class RunnerOptions:
     baselines: List[str]
     datasets_root: Path
     output_root: Path
+    log_dir: Path
     models: List[str]
     datasets: List[str]
     task_groups: Optional[List[str]]
@@ -122,6 +128,7 @@ def parse_args(default_baselines: Optional[Sequence[str]] = None) -> argparse.Na
     )
     parser.add_argument("--datasets-root", default="datasets", help="Root directory containing dataset CSVs.")
     parser.add_argument("--output-root", default="results", help="Output root directory.")
+    parser.add_argument("--log-dir", default=None, help="Directory for run logs. Default: <output_root>/_logs")
     parser.add_argument("--models", nargs="+", default=None, help="Model aliases to run.")
     parser.add_argument("--datasets", nargs="+", default=None, help="Dataset names to run.")
     parser.add_argument("--task-groups", nargs="+", default=None, help="Task groups to run.")
@@ -158,13 +165,13 @@ def parse_args(default_baselines: Optional[Sequence[str]] = None) -> argparse.Na
     parser.add_argument("--random-seed", type=int, default=42, help="Random seed for random baseline.")
     parser.add_argument(
         "--retrieval-backend",
-        choices=["auto", "semantic", "bm25"],
-        default="auto",
+        choices=["semantic", "bm25"],
+        default="semantic",
         help="Retriever backend for few-shot-cot.",
     )
     parser.add_argument(
         "--retrieval-model-name",
-        default="sentence-transformers/all-MiniLM-L6-v2",
+        default=DEFAULT_RETRIEVAL_MODEL_NAME,
         help="Sentence embedding model for semantic retrieval.",
     )
     parser.add_argument("--sc-num-samples", type=int, default=5, help="Number of samples for sc-cot.")
@@ -174,6 +181,8 @@ def parse_args(default_baselines: Optional[Sequence[str]] = None) -> argparse.Na
 
 
 def build_runner_options(args: argparse.Namespace, registry: Dict[str, DatasetSpec]) -> RunnerOptions:
+    output_root = Path(args.output_root).resolve()
+    log_dir = Path(args.log_dir).resolve() if args.log_dir else (output_root / "_logs").resolve()
     selected_task_groups = list(args.task_groups) if args.task_groups else None
     selected_datasets = (
         list(args.datasets)
@@ -186,7 +195,8 @@ def build_runner_options(args: argparse.Namespace, registry: Dict[str, DatasetSp
     return RunnerOptions(
         baselines=[item.strip() for item in list(args.baselines)],
         datasets_root=Path(args.datasets_root).resolve(),
-        output_root=Path(args.output_root).resolve(),
+        output_root=output_root,
+        log_dir=log_dir,
         models=list(args.models or DEFAULT_MODELS),
         datasets=selected_datasets,
         task_groups=selected_task_groups,
@@ -240,6 +250,16 @@ def configure_single_gpu(options: RunnerOptions) -> str:
     # Default to single card 0 when not explicitly provided.
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     return "0"
+
+
+def options_to_dict(options: RunnerOptions) -> Dict[str, Any]:
+    payload: Dict[str, Any] = {}
+    for key, value in vars(options).items():
+        if isinstance(value, Path):
+            payload[key] = str(value)
+        else:
+            payload[key] = value
+    return payload
 
 
 def load_task_registry() -> Dict[str, DatasetSpec]:
@@ -378,7 +398,12 @@ def generate_batch(
     return decoded_texts, input_tokens, output_tokens, runtimes
 
 
-def load_model(model_alias: str, model_cfg: Dict[str, Any], options: RunnerOptions) -> Tuple[Any, Any]:
+def load_model(
+    model_alias: str,
+    model_cfg: Dict[str, Any],
+    options: RunnerOptions,
+    logger: Optional[RunLogger] = None,
+) -> Tuple[Any, Any]:
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -401,6 +426,14 @@ def load_model(model_alias: str, model_cfg: Dict[str, Any], options: RunnerOptio
         trust_remote_code=trust_remote_code,
     )
     print(f"[INFO] Loaded model '{model_alias}' from: {model_path}")
+    if logger is not None:
+        logger.info(
+            "model_loaded",
+            model_alias=model_alias,
+            model_path=model_path,
+            trust_remote_code=trust_remote_code,
+            torch_dtype=dtype_name,
+        )
     return tokenizer, model
 
 
@@ -444,6 +477,7 @@ def run_single_dataset(
     options: RunnerOptions,
     tokenizer: Any,
     model: Any,
+    logger: Optional[RunLogger] = None,
 ) -> Optional[Path]:
     dataset_name = dataset_spec.name
     dataset_cfg = dataset_spec.config
@@ -473,6 +507,14 @@ def run_single_dataset(
     output_path = strategy_output_dir / f"{dataset_name}_{strategy.name}{file_suffix}_data_related.csv"
     if output_path.exists() and not options.overwrite:
         print(f"[SKIP] Existing file: {output_path}")
+        if logger is not None:
+            logger.info(
+                "dataset_skipped_existing",
+                model=model_alias,
+                baseline=strategy.name,
+                dataset=dataset_name,
+                output_path=str(output_path),
+            )
         return output_path
 
     try:
@@ -480,8 +522,26 @@ def run_single_dataset(
     except FileNotFoundError as exc:
         if options.skip_missing_datasets:
             print(f"[SKIP] {exc}")
+            if logger is not None:
+                logger.warning(
+                    "dataset_skipped_missing",
+                    model=model_alias,
+                    baseline=strategy.name,
+                    dataset=dataset_name,
+                    message=str(exc),
+                )
             return None
         raise
+
+    if logger is not None:
+        logger.info(
+            "dataset_start",
+            model=model_alias,
+            baseline=strategy.name,
+            dataset=dataset_name,
+            train_path=str(train_path),
+            test_path=str(test_path),
+        )
 
     train_df = pd.read_csv(train_path)
     test_df = pd.read_csv(test_path)
@@ -517,7 +577,47 @@ def run_single_dataset(
         default_top_p=options.top_p,
     )
 
-    strategy.prepare_dataset(runtime_context)
+    try:
+        strategy.prepare_dataset(runtime_context)
+    except Exception as exc:
+        if logger is not None:
+            logger.error(
+                "strategy_prepare_failed",
+                model=model_alias,
+                baseline=strategy.name,
+                dataset=dataset_name,
+                message=str(exc),
+                traceback=traceback.format_exc(),
+            )
+        raise
+    if strategy.name == "few-shot-cot":
+        retriever_debug_info = runtime_context.state.get("retriever_debug_info", {})
+        selected_backend = ""
+        fallback_reason = ""
+        if isinstance(retriever_debug_info, dict):
+            selected_backend = str(retriever_debug_info.get("selected_backend", ""))
+            fallback_reason = str(retriever_debug_info.get("fallback_reason", ""))
+        print(
+            f"[INFO] Retriever dataset={dataset_name} backend={selected_backend or 'unknown'} "
+            f"fallback_reason={fallback_reason or '-'}"
+        )
+    if logger is not None and strategy.name == "few-shot-cot":
+        retriever_debug_info = runtime_context.state.get("retriever_debug_info", {})
+        payload = {
+            "model": model_alias,
+            "baseline": strategy.name,
+            "dataset": dataset_name,
+            **(retriever_debug_info if isinstance(retriever_debug_info, dict) else {}),
+        }
+        fallback_reason = str(payload.get("fallback_reason", ""))
+        requested_backend = str(payload.get("requested_backend", ""))
+        selected_backend = str(payload.get("selected_backend", ""))
+        if requested_backend == "semantic" and selected_backend != "semantic":
+            logger.warning("retriever_init", message="semantic retriever unavailable, fallback to bm25", **payload)
+        elif fallback_reason.startswith("semantic_load_failed"):
+            logger.warning("retriever_init", message="semantic retriever load failed, fallback to bm25", **payload)
+        else:
+            logger.info("retriever_init", message="retriever initialized", **payload)
     engine = InferenceEngine(tokenizer=tokenizer, model=model, options=options)
 
     texts = test_df["text"].astype(str).tolist()
@@ -549,6 +649,17 @@ def run_single_dataset(
                 engine=engine,
             )
         except Exception as exc:
+            if logger is not None:
+                logger.error(
+                    "dataset_batch_error",
+                    model=model_alias,
+                    baseline=strategy.name,
+                    dataset=dataset_name,
+                    batch_start=start,
+                    batch_end=end,
+                    message=str(exc),
+                    traceback=traceback.format_exc(),
+                )
             strategy_outputs = [
                 StrategySampleOutput(
                     raw_prediction=f"ERROR: {exc}",
@@ -587,6 +698,13 @@ def run_single_dataset(
 
     if len(display_truths) == 0:
         print(f"[WARN] Empty test split for dataset '{dataset_name}'.")
+        if logger is not None:
+            logger.warning(
+                "dataset_empty_test_split",
+                model=model_alias,
+                baseline=strategy.name,
+                dataset=dataset_name,
+            )
         return None
 
     metrics, extra_footer = processor.evaluate(internal_truths, internal_predictions)
@@ -644,6 +762,20 @@ def run_single_dataset(
         ]
     )
     write_footer(output_path, footer_items)
+    if logger is not None:
+        logger.info(
+            "dataset_finished",
+            model=model_alias,
+            baseline=strategy.name,
+            dataset=dataset_name,
+            output_path=str(output_path),
+            num_samples=sample_count,
+            metrics=metrics,
+            total_input_tokens=total_input_tokens,
+            total_output_tokens=total_output_tokens,
+            total_tokens=total_tokens,
+            total_runtime_sec=total_runtime,
+        )
     return output_path
 
 
@@ -651,59 +783,187 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
     registry = load_task_registry()
     args = parse_args(default_baselines=default_baselines)
     options = build_runner_options(args, registry)
+    run_id = build_run_id()
+    logger = RunLogger(options.log_dir, run_id=run_id)
+    started_at = datetime.now().astimezone().isoformat(timespec="seconds")
+    run_results: List[Dict[str, Any]] = []
+    run_failures: List[Dict[str, Any]] = []
+    configured_cuda_device = ""
 
-    unknown_baselines = [name for name in options.baselines if name not in STRATEGY_REGISTRY]
-    if unknown_baselines:
-        raise ValueError(
-            f"Unknown baselines: {unknown_baselines}. Supported: {sorted(STRATEGY_REGISTRY.keys())}"
+    logger.info(
+        "run_started",
+        message="Experiment run started",
+        options=options_to_dict(options),
+        cli_args=vars(args),
+        available_baselines=sorted(STRATEGY_REGISTRY.keys()),
+        available_models=sorted(MODEL_REGISTRY.keys()),
+        available_datasets=sorted(registry.keys()),
+    )
+
+    try:
+        unknown_baselines = [name for name in options.baselines if name not in STRATEGY_REGISTRY]
+        if unknown_baselines:
+            raise ValueError(
+                f"Unknown baselines: {unknown_baselines}. Supported: {sorted(STRATEGY_REGISTRY.keys())}"
+            )
+        unknown_models = [name for name in options.models if name not in MODEL_REGISTRY]
+        if unknown_models:
+            raise ValueError(f"Unknown model aliases: {unknown_models}. Supported: {sorted(MODEL_REGISTRY.keys())}")
+        unknown_datasets = [name for name in options.datasets if name not in registry]
+        if unknown_datasets:
+            raise ValueError(f"Unknown datasets: {unknown_datasets}. Supported: {sorted(registry.keys())}")
+
+        configured_cuda_device = configure_single_gpu(options)
+        logger.info(
+            "gpu_configured",
+            message="Single-GPU runtime configured",
+            cuda_visible_devices=configured_cuda_device,
         )
-    unknown_models = [name for name in options.models if name not in MODEL_REGISTRY]
-    if unknown_models:
-        raise ValueError(f"Unknown model aliases: {unknown_models}. Supported: {sorted(MODEL_REGISTRY.keys())}")
-    unknown_datasets = [name for name in options.datasets if name not in registry]
-    if unknown_datasets:
-        raise ValueError(f"Unknown datasets: {unknown_datasets}. Supported: {sorted(registry.keys())}")
 
-    configured_cuda_device = configure_single_gpu(options)
+        print(f"[INFO] Baselines: {options.baselines}")
+        print(f"[INFO] Models: {options.models}")
+        print(f"[INFO] Datasets root: {options.datasets_root}")
+        print(f"[INFO] Output root: {options.output_root}")
+        print(f"[INFO] Log root: {options.log_dir}")
+        print(f"[INFO] Datasets: {options.datasets}")
+        print(f"[INFO] Dry-run: {options.dry_run}")
+        print(f"[INFO] Overwrite: {options.overwrite}")
+        print(f"[INFO] Skip missing datasets: {options.skip_missing_datasets}")
+        print(f"[INFO] CUDA_VISIBLE_DEVICES: {configured_cuda_device}")
+        logger.info(
+            "run_plan",
+            message="Resolved run matrix",
+            baselines=options.baselines,
+            models=options.models,
+            datasets=options.datasets,
+        )
 
-    print(f"[INFO] Baselines: {options.baselines}")
-    print(f"[INFO] Models: {options.models}")
-    print(f"[INFO] Datasets root: {options.datasets_root}")
-    print(f"[INFO] Output root: {options.output_root}")
-    print(f"[INFO] Datasets: {options.datasets}")
-    print(f"[INFO] Dry-run: {options.dry_run}")
-    print(f"[INFO] Overwrite: {options.overwrite}")
-    print(f"[INFO] Skip missing datasets: {options.skip_missing_datasets}")
-    print(f"[INFO] CUDA_VISIBLE_DEVICES: {configured_cuda_device}")
-
-    for model_alias in options.models:
-        tokenizer = None
-        model = None
-        try:
-            if not options.dry_run:
-                tokenizer, model = load_model(model_alias, MODEL_REGISTRY[model_alias], options)
-
-            for baseline_name in options.baselines:
-                strategy = STRATEGY_REGISTRY[baseline_name]
-                for dataset_name in options.datasets:
-                    dataset_spec = registry[dataset_name]
+        for model_alias in options.models:
+            tokenizer = None
+            model = None
+            logger.info("model_started", message="Model loop started", model=model_alias)
+            try:
+                if not options.dry_run:
                     try:
-                        output_path = run_single_dataset(
-                            model_alias=model_alias,
-                            strategy=strategy,
-                            dataset_spec=dataset_spec,
-                            options=options,
-                            tokenizer=tokenizer,
-                            model=model,
+                        tokenizer, model = load_model(
+                            model_alias,
+                            MODEL_REGISTRY[model_alias],
+                            options,
+                            logger=logger,
                         )
-                        if output_path is not None:
-                            print(f"[OK] Saved: {output_path}")
                     except Exception as exc:
-                        print(
-                            f"[ERROR] model={model_alias} baseline={baseline_name} dataset={dataset_name}: {exc}"
+                        logger.error(
+                            "model_load_failed",
+                            message=str(exc),
+                            model=model_alias,
+                            traceback=traceback.format_exc(),
                         )
-        finally:
-            release_model(model)
+                        run_failures.append(
+                            {
+                                "stage": "model_load",
+                                "model": model_alias,
+                                "message": str(exc),
+                            }
+                        )
+                        continue
+
+                for baseline_name in options.baselines:
+                    strategy = STRATEGY_REGISTRY[baseline_name]
+                    logger.info(
+                        "baseline_started",
+                        message="Baseline loop started",
+                        model=model_alias,
+                        baseline=baseline_name,
+                    )
+                    for dataset_name in options.datasets:
+                        dataset_spec = registry[dataset_name]
+                        dataset_started = time.perf_counter()
+                        try:
+                            output_path = run_single_dataset(
+                                model_alias=model_alias,
+                                strategy=strategy,
+                                dataset_spec=dataset_spec,
+                                options=options,
+                                tokenizer=tokenizer,
+                                model=model,
+                                logger=logger,
+                            )
+                            elapsed = time.perf_counter() - dataset_started
+                            run_results.append(
+                                {
+                                    "model": model_alias,
+                                    "baseline": baseline_name,
+                                    "dataset": dataset_name,
+                                    "status": "saved" if output_path is not None else "skipped",
+                                    "elapsed_sec": elapsed,
+                                    "output_path": str(output_path) if output_path else None,
+                                }
+                            )
+                            if output_path is not None:
+                                print(f"[OK] Saved: {output_path}")
+                        except Exception as exc:
+                            elapsed = time.perf_counter() - dataset_started
+                            print(
+                                f"[ERROR] model={model_alias} baseline={baseline_name} dataset={dataset_name}: {exc}"
+                            )
+                            logger.error(
+                                "dataset_failed",
+                                message=str(exc),
+                                model=model_alias,
+                                baseline=baseline_name,
+                                dataset=dataset_name,
+                                elapsed_sec=elapsed,
+                                traceback=traceback.format_exc(),
+                            )
+                            run_failures.append(
+                                {
+                                    "stage": "dataset_run",
+                                    "model": model_alias,
+                                    "baseline": baseline_name,
+                                    "dataset": dataset_name,
+                                    "elapsed_sec": elapsed,
+                                    "message": str(exc),
+                                }
+                            )
+                            if isinstance(exc, RetrievalInitializationError):
+                                raise
+                    logger.info(
+                        "baseline_finished",
+                        message="Baseline loop finished",
+                        model=model_alias,
+                        baseline=baseline_name,
+                    )
+            finally:
+                release_model(model)
+                logger.info("model_finished", message="Model loop finished", model=model_alias)
+    except Exception as exc:
+        logger.error("run_fatal", message=str(exc), traceback=traceback.format_exc())
+        run_failures.append({"stage": "run", "message": str(exc)})
+        raise
+    finally:
+        finished_at = datetime.now().astimezone().isoformat(timespec="seconds")
+        summary = {
+            "run_id": run_id,
+            "started_at": started_at,
+            "finished_at": finished_at,
+            "options": options_to_dict(options),
+            "configured_cuda_device": configured_cuda_device,
+            "num_success_or_skip": len(run_results),
+            "num_failures": len(run_failures),
+            "results": run_results,
+            "failures": run_failures,
+            "events_path": str(logger.events_path),
+            "text_log_path": str(logger.text_log_path),
+        }
+        logger.write_summary(summary)
+        logger.info(
+            "run_finished",
+            message="Experiment run finished",
+            num_success_or_skip=len(run_results),
+            num_failures=len(run_failures),
+            summary_path=str(logger.summary_path),
+        )
+        print(f"[INFO] Logs: {logger.log_dir}")
 
 
 if __name__ == "__main__":

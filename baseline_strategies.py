@@ -291,6 +291,7 @@ class FewShotCotStrategy(_ContextStrategyBase):
         )
         context.state["retriever"] = retriever
         context.state["retrieval_backend_used"] = backend_used
+        context.state["retriever_debug_info"] = getattr(retriever, "debug_info", {})
 
     def footer_items(self, context: StrategyRuntimeContext) -> List[Tuple[str, Any]]:
         return [

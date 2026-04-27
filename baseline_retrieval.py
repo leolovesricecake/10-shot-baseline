@@ -11,6 +11,8 @@ from typing import List, Sequence, Tuple
 
 import numpy as np
 
+from baseline_runner_config import DEFAULT_RETRIEVAL_MODEL_NAME
+
 
 def retrieval_tokenize(text: str) -> List[str]:
     raw = str(text).strip().lower()
@@ -29,6 +31,10 @@ class BaseRetriever:
 
     def query(self, text: str, top_k: int) -> Tuple[List[int], List[float]]:
         raise NotImplementedError
+
+
+class RetrievalInitializationError(RuntimeError):
+    """Raised when retriever initialization fails and should be treated as fatal."""
 
 
 @dataclass
@@ -89,7 +95,7 @@ class SemanticRetriever(BaseRetriever):
     def build(
         cls,
         train_texts: Sequence[str],
-        model_name: str = '/mnt/huawei/ymb/model/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf',
+        model_name: str = DEFAULT_RETRIEVAL_MODEL_NAME,
         batch_size: int = 64,
     ) -> "SemanticRetriever":
         from sentence_transformers import SentenceTransformer  # type: ignore
@@ -125,28 +131,44 @@ class SemanticRetriever(BaseRetriever):
 
 def build_retriever(
     train_texts: Sequence[str],
-    backend: str = "auto",
-    semantic_model_name: str = '/mnt/huawei/ymb/model/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/c9745ed1d9f207416be6d2e6f8de32d1f16199bf',
+    backend: str = "semantic",
+    semantic_model_name: str = DEFAULT_RETRIEVAL_MODEL_NAME,
 ) -> Tuple[BaseRetriever, str]:
     backend = backend.lower().strip()
-    if backend not in {"auto", "semantic", "bm25"}:
+    if backend not in {"semantic", "bm25"}:
         raise ValueError(f"Unsupported retrieval backend: {backend}")
 
     model_path = Path(str(semantic_model_name)).expanduser()
+    debug_info = {
+        "requested_backend": backend,
+        "selected_backend": None,
+        "semantic_model_name": str(semantic_model_name),
+        "semantic_model_path_exists": bool(model_path.exists()),
+        "semantic_load_success": False,
+        "fallback_reason": None,
+    }
 
     if backend == "semantic":
-        retriever = SemanticRetriever.build(train_texts, model_name=semantic_model_name)
+        if not model_path.exists():
+            debug_info["selected_backend"] = "semantic"
+            debug_info["fallback_reason"] = "semantic_model_path_not_found"
+            raise RetrievalInitializationError(
+                f"Semantic retrieval model path not found: {model_path}"
+            )
+        try:
+            retriever = SemanticRetriever.build(train_texts, model_name=str(model_path))
+        except Exception as exc:
+            debug_info["selected_backend"] = "semantic"
+            debug_info["fallback_reason"] = f"semantic_load_failed: {exc}"
+            raise RetrievalInitializationError(
+                f"Failed to load semantic retriever model from '{model_path}': {exc}"
+            ) from exc
+        debug_info["selected_backend"] = "semantic"
+        debug_info["semantic_load_success"] = True
+        setattr(retriever, "debug_info", debug_info)
         return retriever, "semantic"
 
-    if backend == "auto":
-        # In auto mode, only attempt semantic retrieval with a local model path.
-        # This avoids unstable remote downloads during batch experiments.
-        if model_path.exists():
-            try:
-                retriever = SemanticRetriever.build(train_texts, model_name=str(model_path))
-                return retriever, "semantic"
-            except Exception:
-                pass
-
     retriever = BM25Retriever.build(train_texts)
+    debug_info["selected_backend"] = "bm25"
+    setattr(retriever, "debug_info", debug_info)
     return retriever, "bm25"
