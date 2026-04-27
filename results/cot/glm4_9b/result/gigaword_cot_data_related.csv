@@ -1,0 +1,639 @@
+Text,truth,pre,pred_raw,input_tokens,output_tokens,total_tokens,runtime,acc,rouge1,rouge2,rougeL
+"five-time world champion michelle kwan withdrew from the #### us figure skating championships on wednesday , but will petition us skating officials for the chance to compete at the #### turin olympics .",injury leaves kwan 's olympic hopes in limbo,"in olympics .
+
+Summary:
+Five-time world champion Michelle Kwan withdrew from the US figure skating championships but plans to petition US skating officials for a chance to compete at the Turin Olympics.","in olympics .
+
+Summary:
+Five-time world champion Michelle Kwan withdrew from the US figure skating championships but plans to petition US skating officials for a chance to compete at the Turin Olympics.",87,55,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+us business leaders lashed out wednesday at legislation that would penalize companies for employing illegal immigrants .,us business attacks tough immigration law,"final summary.
+
+Input:
+us business leaders lashed out wednesday at legislation that would penalize companies for employing illegal immigrants .
+
+Summary:
+Business leaders criticized legislation on Wednesday, which proposes penalties for companies hiring illegal immigrants.","final summary.
+
+Input:
+us business leaders lashed out wednesday at legislation that would penalize companies for employing illegal immigrants .
+
+Summary:
+Business leaders criticized legislation on Wednesday, which proposes penalties for companies hiring illegal immigrants.",67,75,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+general motors corp. said wednesday its us sales fell ##.# percent in december and four percent in #### with the biggest losses coming from passenger car sales .,gm december sales fall ## percent,"four percent in #### with the biggest losses coming from passenger car sales .
+
+Summary:
+General Motors reported a decline in U.S. sales, with a significant drop in passenger car sales.","four percent in #### with the biggest losses coming from passenger car sales .
+
+Summary:
+General Motors reported a decline in U.S. sales, with a significant drop in passenger car sales.",78,64,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+several thousand people gathered on wednesday evening on the main square in zagreb for a public draw and an open air party to celebrate the croatian capital 's second chance to host the women 's slalom world cup .,thousands of croatians celebrate before world cup slalom,"Several thousand people gathered in Zagreb's main square on Wednesday evening. They celebrated the city's second opportunity to host the Women's Slalom World Cup, with a public draw and an open-air party.","Several thousand people gathered in Zagreb's main square on Wednesday evening. They celebrated the city's second opportunity to host the Women's Slalom World Cup, with a public draw and an open-air party.",94,48,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"us first lady laura bush and us secretary of state condoleezza rice will represent the united states later this month at the inauguration of liberia 's president-elect ellen johnson sirleaf , the white house said wednesday .",laura bush UNK rice to attend sirleaf 's inauguration in liberia,Laura Bush and Condoleezza Rice will represent the U.S. at Liberia's president-elect Ellen Johnson Sirleaf's inauguration.,Laura Bush and Condoleezza Rice will represent the U.S. at Liberia's president-elect Ellen Johnson Sirleaf's inauguration.,94,48,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"jack abramoff , a former lobbyist at the center of a mushrooming political scandal in washington , on wednesday pleaded guilty in a us court in miami to defrauding lenders in a florida gambling boat deal .",top republican lobbyist pleads guilty to florida fraud,".
+
+Summary:
+Jack Abramoff, a former Washington lobbyist, pleaded guilty in a Miami court to defrauding lenders in a Florida gambling boat deal.",".
+
+Summary:
+Jack Abramoff, a former Washington lobbyist, pleaded guilty in a Miami court to defrauding lenders in a Florida gambling boat deal.",91,51,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"somalia 's feuding president and parliament speaker have agreed a compromise in a bitter row over the appropriate seat for their fledgling transitional government , a yemeni official said wednesday .",somalia rivals in compromise on seat of government,"i official said wednesday .
+
+Summary:
+Somalia's feuding president and parliament speaker reached a compromise over their transitional government's seating arrangement, according to a Yemeni official.","i official said wednesday .
+
+Summary:
+Somalia's feuding president and parliament speaker reached a compromise over their transitional government's seating arrangement, according to a Yemeni official.",86,56,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"a ##-hour strike by airport workers in portugal planned for friday over job security issues could lead to flight cancellations , union and airport officials said .",portuguese airport workers strike could ground flights on friday,"issues could lead to flight cancellations , union and airport officials said .
+
+Summary:
+Airport workers in Portugal plan a 24-hour strike on Friday, aiming to address job security concerns. The strike could result in flight cancellations, according to union and airport officials.","issues could lead to flight cancellations , union and airport officials said .
+
+Summary:
+Airport workers in Portugal plan a 24-hour strike on Friday, aiming to address job security concerns. The strike could result in flight cancellations, according to union and airport officials.",78,64,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+jose mourinho renewed his partnership with portuguese international maniche on wednesday when he completed the loan signing of the ##-year-old midfielder from dynamo moscow .,maniche renews partnership with mourinho,"year-old midfielder from dynamo moscow .
+
+Summary:
+Mourinho renewed his association with Portuguese midfielder Maniche, completing a loan signing for the 27-year-old from Dynamo Moscow.","year-old midfielder from dynamo moscow .
+
+Summary:
+Mourinho renewed his association with Portuguese midfielder Maniche, completing a loan signing for the 27-year-old from Dynamo Moscow.",83,59,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"hollywood is planning a new sequel to adventure flick `` ocean 's eleven , '' with star george clooney set to reprise his role as a charismatic thief in `` ocean 's thirteen , '' the entertainment press said wednesday .",hollywood shores up support for ocean 's thirteen,"Hollywood is developing a sequel to ""Ocean's Eleven,"" titled ""Ocean's Thirteen."" George Clooney is set to reprise his role as a charming thief. The news was reported by the entertainment press on Wednesday.","Hollywood is developing a sequel to ""Ocean's Eleven,"" titled ""Ocean's Thirteen."" George Clooney is set to reprise his role as a charming thief. The news was reported by the entertainment press on Wednesday.",95,47,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"canada advised its nationals wednesday to avoid non-essential travel to nepal , following the resumption of a maoist rebel insurgency in the himalayan kingdom .",canada recommends avoiding travel to nepal,"ist rebel insurgency in the himalayan kingdom .
+
+Summary:
+Canada advised its citizens to refrain from non-essential travel to Nepal due to the resumption of Maoist rebel activities in the region.","ist rebel insurgency in the himalayan kingdom .
+
+Summary:
+Canada advised its citizens to refrain from non-essential travel to Nepal due to the resumption of Maoist rebel activities in the region.",82,60,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"us auto sales will likely be weaker in #### , a senior executive at ford motor company said wednesday .",ford executive sees weaker us auto sales in ####,".
+
+Input:
+us auto sales will likely be weaker in #### , a senior executive at ford motor company said wednesday .
+
+Summary:
+Senior Ford executive predicts weaker US auto sales in ####.",".
+
+Input:
+us auto sales will likely be weaker in #### , a senior executive at ford motor company said wednesday .
+
+Summary:
+Senior Ford executive predicts weaker US auto sales in ####.",68,74,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+the united states on wednesday welcomed beijing 's early release of a chinese journalist jailed for exposing top-level graft but said it remain concerned over the lack of freedom in the world 's most populous nation .,us welcomes chinese journalist 's release highlights freedom concerns,"populous nation .
+
+Summary:
+The U.S. welcomed China's early release of a journalist who exposed corruption. However, the U.S. expressed ongoing concern about the lack of freedom in China.","populous nation .
+
+Summary:
+The U.S. welcomed China's early release of a journalist who exposed corruption. However, the U.S. expressed ongoing concern about the lack of freedom in China.",89,53,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"two bank workers on wednesday admitted stealing almost ###,### pounds -lrb- ###,### euros -rrb- from the accounts of three former manchester city footballers .",two bankers admit theft from city players,"three former manchester city footballers .
+
+Summary:
+Two bank workers confessed to stealing nearly ###,### pounds from the accounts of three ex-Manchester City footballers.","three former manchester city footballers .
+
+Summary:
+Two bank workers confessed to stealing nearly ###,### pounds from the accounts of three ex-Manchester City footballers.",84,58,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"israeli prime minister ariel sharon was admitted to hospital early for a planned heart procedure after feeling unwell wednesday evening , his office said .",unwell sharon admitted to hospital early,"heart procedure after feeling unwell wednesday evening , his office said .
+
+Summary:
+Israeli PM Ariel Sharon admitted to hospital for a planned heart procedure, following unwellness on Wednesday evening.","heart procedure after feeling unwell wednesday evening , his office said .
+
+Summary:
+Israeli PM Ariel Sharon admitted to hospital for a planned heart procedure, following unwellness on Wednesday evening.",78,64,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"sales of hybrid UNK vehicles in the united states should more than triple over the next seven years , a leading research firm said wednesday .",us hybrid vehicle sales expect to more than triple in seven years,"more than triple over the next seven years , a leading research firm said wednesday .
+
+Summary:
+Hybrid UNK vehicle sales in the U.S. are expected to more than triple over the next seven years, according to a leading research firm.","more than triple over the next seven years , a leading research firm said wednesday .
+
+Summary:
+Hybrid UNK vehicle sales in the U.S. are expected to more than triple over the next seven years, according to a leading research firm.",75,67,142,0.09931107787633664,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+the los angeles dodgers acquired south korean right-hander jae seo from the new york mets on wednesday in a four-player swap .,korea 's seo headed to dodgers from mets,"ae seo from the new york mets on wednesday in a four-player swap .
+
+Summary:
+The Los Angeles Dodgers acquired South Korean pitcher Jae Seo from the New York Mets in a four-player trade on Wednesday.","ae seo from the new york mets on wednesday in a four-player swap .
+
+Summary:
+The Los Angeles Dodgers acquired South Korean pitcher Jae Seo from the New York Mets in a four-player trade on Wednesday.",78,65,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"teenage hollywood starlet lindsay lohan , who was rushed to hospital this week after suffering an asthma attack , has admitted fighting a fierce battle with the eating disorder bulimia .",hollywood starlet lindsay lohan admits bulimia battle,"fierce battle with the eating disorder bulimia .
+
+Summary:
+Lindsay Lohan, a teenage Hollywood starlet, was hospitalized for an asthma attack. She has also confessed to battling bulimia.","fierce battle with the eating disorder bulimia .
+
+Summary:
+Lindsay Lohan, a teenage Hollywood starlet, was hospitalized for an asthma attack. She has also confessed to battling bulimia.",85,58,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the white house vigorously rejected wednesday suggestions that us soldiers in iraq do not hesitate to fire on civilians , after a bombing killed eight iraqi non-combatants , including two children .",us insists soldiers act with restraint to protect civilians,"non-combatants , including two children .
+
+Summary:
+The White House denied claims that US soldiers in Iraq frequently fire on civilians, following a bombing that killed eight Iraqi non-combatants, including two children.","non-combatants , including two children .
+
+Summary:
+The White House denied claims that US soldiers in Iraq frequently fire on civilians, following a bombing that killed eight Iraqi non-combatants, including two children.",86,57,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the us special envoy to multilateral talks aimed at ending north korea 's nuclear weapons drive has quit , the state department said wednesday amid reported divisions within the administration over the nuclear issue .",us special envoy to korean nuclear talks quits,"divisions within the administration over the nuclear issue .
+
+Summary:
+The U.S. Special Envoy for multilateral talks to end North Korea's nuclear weapons program has resigned, according to the State Department. The resignation comes amidst reported internal divisions within the administration over the nuclear issue.","divisions within the administration over the nuclear issue .
+
+Summary:
+The U.S. Special Envoy for multilateral talks to end North Korea's nuclear weapons program has resigned, according to the State Department. The resignation comes amidst reported internal divisions within the administration over the nuclear issue.",86,57,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"at least two people have tested positive for the bird flu virus in eastern turkey , health minister recep akdag told a news conference wednesday .",two test positive for bird flu virus in turkey,"the bird flu virus in eastern turkey , health minister recep akdag told a news conference wednesday .
+
+Summary:
+Two individuals in eastern Turkey have tested positive for the bird flu virus, according to Health Minister Recep Akdag, who announced this at a news conference on Wednesday.","the bird flu virus in eastern turkey , health minister recep akdag told a news conference wednesday .
+
+Summary:
+Two individuals in eastern Turkey have tested positive for the bird flu virus, according to Health Minister Recep Akdag, who announced this at a news conference on Wednesday.",75,68,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"britain 's un envoy on wednesday urged stronger international support , including greater eu funding , for the african union -lrb- au -rrb- peacekeeping mission in sudan 's troubled darfur region to improve security on the ground .",britain urges stronger international support for au in darfur,"The UK's UN envoy called for enhanced international backing, including increased EU funding, to bolster the African Union's peacekeeping efforts in Sudan's Darfur region, aiming to improve ground security.","The UK's UN envoy called for enhanced international backing, including increased EU funding, to bolster the African Union's peacekeeping efforts in Sudan's Darfur region, aiming to improve ground security.",98,45,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"australian foreign minister alexander downer called wednesday for the reform of the un security council and expressed support for brazil , india , japan and an african country to join the council .",australia backs brazil others for un security council,"japan and an african country to join the council .
+
+Summary:
+Australian Foreign Minister Alexander Downer advocated for the reform of the UN Security Council on Wednesday. He expressed support for Brazil, India, Japan, and an African country to become members of the council.","japan and an african country to join the council .
+
+Summary:
+Australian Foreign Minister Alexander Downer advocated for the reform of the UN Security Council on Wednesday. He expressed support for Brazil, India, Japan, and an African country to become members of the council.",85,58,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"two egyptian border guards were killed wednesday in clashes with palestinian militants near the rafah crossing on the border with gaza , a medical source said .",two egyptian guards killed on border with gaza,"ah crossing on the border with gaza , a medical source said .
+
+Summary:
+Two Egyptian border guards were killed in clashes with Palestinian militants near the Rafah crossing on the Gaza border, according to a medical source.","ah crossing on the border with gaza , a medical source said .
+
+Summary:
+Two Egyptian border guards were killed in clashes with Palestinian militants near the Rafah crossing on the Gaza border, according to a medical source.",81,62,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"stephen harper and his conservative party pulled ahead of prime minister paul martin 's liberals wednesday , weeks before canada 's federal election on january ## , according to the latest poll .",conservatives gain momentum ahead of ruling liberals,"uary ## , according to the latest poll .
+
+Summary:
+Stephen Harper's Conservative Party leads over Prime Minister Paul Martin's Liberals in a recent poll, weeks before Canada's federal election.","uary ## , according to the latest poll .
+
+Summary:
+Stephen Harper's Conservative Party leads over Prime Minister Paul Martin's Liberals in a recent poll, weeks before Canada's federal election.",86,57,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+dutch bank abn amro was hit wednesday with its second us fine in two months after settling a government probe into its mortgage lending in the industrial state of michigan .,abn amro hit with second us fine,"into its mortgage lending in the industrial state of michigan .
+
+Summary:
+ABN AMRO, a Dutch bank, faced its second U.S. fine in two months. This penalty followed the bank's resolution of a government investigation into its mortgage lending practices in Michigan.","into its mortgage lending in the industrial state of michigan .
+
+Summary:
+ABN AMRO, a Dutch bank, faced its second U.S. fine in two months. This penalty followed the bank's resolution of a government investigation into its mortgage lending practices in Michigan.",83,60,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the buffalo bills sacked tom donahoe as president and general manager on wednesday , fulfilling expectations of a shake-up after another failure to make the national football league playoffs .",nfl 's bills shake up front office,"a shake-up after another failure to make the national football league playoffs .
+
+Summary:
+The Buffalo Bills fired Tom Donahoe as president and GM, following another missed NFL playoff opportunity.","a shake-up after another failure to make the national football league playoffs .
+
+Summary:
+The Buffalo Bills fired Tom Donahoe as president and GM, following another missed NFL playoff opportunity.",81,62,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+tottenham sealed a miserable festive period for a toothless manchester city here wednesday with a #-# win thanks to goals from their confident striking duo of ahmed mido and robbie keane .,spurs compound manchester city woes,"o and robbie keane .
+
+Summary:
+Tottenham ended Manchester City's festive campaign with a #-# victory, thanks to goals from the Spurs' striking pair, Ahmed Mido and Robbie Keane.","o and robbie keane .
+
+Summary:
+Tottenham ended Manchester City's festive campaign with a #-# victory, thanks to goals from the Spurs' striking pair, Ahmed Mido and Robbie Keane.",88,55,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the dollar fell to a two-month low against the euro wednesday on expectations that us interest rates will soon stop going up , depriving the greenback of its biggest investment appeal .",us rate outlook sends dollar to two-month low against euro,", depriving the greenback of its biggest investment appeal .
+
+Summary:
+The dollar dropped to a two-month low against the euro, driven by expectations of a halt in rising US interest rates, which diminishes the dollar's investment appeal.",", depriving the greenback of its biggest investment appeal .
+
+Summary:
+The dollar dropped to a two-month low against the euro, driven by expectations of a halt in rising US interest rates, which diminishes the dollar's investment appeal.",83,60,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"two top us movie groups picked their #### awards nominees wednesday , with gay drama `` brokeback mountain , '' george clooney 's `` good night and good '' luck and `` crash '' taking early leads in the oscars race .",top us movie groups pick awards nominees as oscars loom,"Summary:
+Top US movie groups announced their Oscar nominees, with ""Brokeback Mountain,"" ""Good Night and Good Luck,"" and ""Crash"" leading the Oscar race.","Summary:
+Top US movie groups announced their Oscar nominees, with ""Brokeback Mountain,"" ""Good Night and Good Luck,"" and ""Crash"" leading the Oscar race.",95,48,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"right fielder jeromy burnitz inked a one-year , #.# million-dollar contract with the pittsburgh pirates on wednesday , a week after he was reported as close to a deal with baltimore .",pirates ink outfielder burnitz to one-year deal,"deal with baltimore .
+
+Summary:
+Jeromy Burnitz signed a one-year, $#.# million contract with the Pittsburgh Pirates, following a reported near-deal with the Baltimore Orioles.","deal with baltimore .
+
+Summary:
+Jeromy Burnitz signed a one-year, $#.# million contract with the Pittsburgh Pirates, following a reported near-deal with the Baltimore Orioles.",90,53,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+us president george w. bush said late wednesday that he and the first lady shared `` the concerns of the israeli people about prime minister ariel sharon 's health '' and were praying for his recovery .,bush says he shares israelis concern over sharon,"his recovery .
+
+Summary:
+President George W. Bush expressed concerns over Prime Minister Ariel Sharon's health, along with the First Lady, and prayed for his recovery.","his recovery .
+
+Summary:
+President George W. Bush expressed concerns over Prime Minister Ariel Sharon's health, along with the First Lady, and prayed for his recovery.",92,51,143,0.09485841349851398,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the prime minister of burkina faso , UNK ernest yonli , has handed in his resignation to president blaise compaore , the president 's office announced wednesday .",burkina faso 's prime minister resigns,":
+Burkina Faso's Prime Minister, Ernest Yonli, has resigned and submitted his resignation to President Blaise Compaoré, as announced by the president's office on Wednesday.",":
+Burkina Faso's Prime Minister, Ernest Yonli, has resigned and submitted his resignation to President Blaise Compaoré, as announced by the president's office on Wednesday.",87,51,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"a top hollywood event promoter is seeking a court order to stop socialite and hotel heiress paris hilton from allegedly harassing him and threatening his life , court documents showed wednesday .",man seeks stay-away order against paris hilton,"nesday .
+
+Summary:
+A top Hollywood event promoter is seeking a court order to halt Paris Hilton's alleged harassment and threats against the promoter, as revealed in court documents.","nesday .
+
+Summary:
+A top Hollywood event promoter is seeking a court order to halt Paris Hilton's alleged harassment and threats against the promoter, as revealed in court documents.",84,54,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the un security council will hold a ministerial session on the situation in africa 's great lakes region late this month , UNK 's un envoy augustine UNK said wednesday .",security council to hold ministerial session on africa 's great lakes,".
+
+Summary:
+The UN Security Council is scheduled to hold a ministerial session focused on the situation in Africa's Great Lakes region, set to take place later this month. The UN's special envoy, Augustine UNK, made this announcement on Wednesday.",".
+
+Summary:
+The UN Security Council is scheduled to hold a ministerial session focused on the situation in Africa's Great Lakes region, set to take place later this month. The UN's special envoy, Augustine UNK, made this announcement on Wednesday.",85,53,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+political leaders in israel united in prayers for ariel sharon on thursday as the prime minister underwent emergency surgery after suffering a massive stroke .,israeli leaders unite in prayer for ailing sharon,"minister underwent emergency surgery after suffering a massive stroke .
+
+Summary:
+Israeli political leaders united in prayer for Prime Minister Ariel Sharon, who was undergoing emergency surgery following a massive stroke.","minister underwent emergency surgery after suffering a massive stroke .
+
+Summary:
+Israeli political leaders united in prayer for Prime Minister Ariel Sharon, who was undergoing emergency surgery following a massive stroke.",76,62,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+israeli prime minister ariel sharon was undergoing an emergency operation thursday after suffering a massive stroke .,timeline of sharon era,"ariel sharon was undergoing an emergency operation thursday after suffering a massive stroke .
+
+Summary:
+Israeli PM Ariel Sharon underwent emergency surgery following a massive stroke.","ariel sharon was undergoing an emergency operation thursday after suffering a massive stroke .
+
+Summary:
+Israeli PM Ariel Sharon underwent emergency surgery following a massive stroke.",69,69,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+human trafficking victims could be spared deportation from britain and get automatic permission to stay under government proposals revealed thursday .,human trafficking victims could get right to remain in britain,"from britain and get automatic permission to stay under government proposals revealed thursday .
+
+Summary:
+Under government proposals, human trafficking victims in Britain may avoid deportation and receive automatic permission to stay.","from britain and get automatic permission to stay under government proposals revealed thursday .
+
+Summary:
+Under government proposals, human trafficking victims in Britain may avoid deportation and receive automatic permission to stay.",70,68,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+world number two rafael nadal is in doubt for this month 's australian open after withdrawing on thursday from next week 's lead-up sydney international tournament .,nadal pulls out of sydney international,"international tournament .
+
+Summary:
+Rafael Nadal, ranked second in the world, is uncertain about participating in the Australian Open this month, following his withdrawal from the Sydney International tournament on Thursday.","international tournament .
+
+Summary:
+Rafael Nadal, ranked second in the world, is uncertain about participating in the Australian Open this month, following his withdrawal from the Sydney International tournament on Thursday.",83,55,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"four-time all-star alexander mogilny was waived by new jersey on wednesday , one day after the devils welcomed back czech forward patrik elias .",mogilny odd man out as devils welcome back elias,"patrik elias .
+
+Summary:
+Alexander Mogilny, a four-time all-star, was waived by the New Jersey Devils on Wednesday, following the team's welcome of Czech forward Patrik Elias.","patrik elias .
+
+Summary:
+Alexander Mogilny, a four-time all-star, was waived by the New Jersey Devils on Wednesday, following the team's welcome of Czech forward Patrik Elias.",81,57,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"finance minister ehud olmert will chair an emergency meeting of the israeli cabinet on thursday after prime minister ariel sharon suffered a massive stroke , public television reported .",olmert to chair emergency israel cabinet meet,"reported .
+
+Summary:
+Finance Minister Ehud Olmert will lead an emergency Israeli cabinet meeting on Thursday, following Prime Minister Ariel Sharon's stroke, as reported by public television.","reported .
+
+Summary:
+Finance Minister Ehud Olmert will lead an emergency Israeli cabinet meeting on Thursday, following Prime Minister Ariel Sharon's stroke, as reported by public television.",84,54,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"hollywood actor nick nolte has successfully completed three years of probation imposed for driving under the influence of drugs , a judge ruled on wednesday .",us actor nick nolte ends UNK,"drugs , a judge ruled on wednesday .
+
+Summary:
+Hollywood actor Nick Nolte has completed three years of probation for a DUI drug offense, as ruled by a judge on Wednesday.","drugs , a judge ruled on wednesday .
+
+Summary:
+Hollywood actor Nick Nolte has completed three years of probation for a DUI drug offense, as ruled by a judge on Wednesday.",77,61,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"south korea 's consumer confidence topped the benchmark ###-point level for the first time in eight months in december , reflecting the country 's solid economic recovery , official data showed thursday .",skorea 's consumer confidence tops benchmark ###,"Summary:
+South Korea's consumer confidence reached an eight-month high in December, indicating a robust economic recovery, according to official data released on Thursday.","Summary:
+South Korea's consumer confidence reached an eight-month high in December, indicating a robust economic recovery, according to official data released on Thursday.",86,52,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"hollywood star charlie sheen and actress denise richards have scrapped efforts to reconcile their differences and have decided to push ahead with a divorce , court documents showed wednesday .",denise richards charlie sheen push ahead with divorce,"wednesday .
+
+Summary:
+Charlie Sheen and Denise Richards have ended attempts to reconcile, choosing to proceed with a divorce, as indicated by court documents.","wednesday .
+
+Summary:
+Charlie Sheen and Denise Richards have ended attempts to reconcile, choosing to proceed with a divorce, as indicated by court documents.",83,55,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"hong kong gold prices opened higher thursday at ###.##-### .## us dollars an ounce , compared to wednesday 's close of ###.##-### .## dollars an ounce .",hong kong gold opens higher,"Hong Kong gold prices opened higher on Thursday, with rates ranging from ###.##-###.## US dollars per ounce, up from Wednesday's close of ###.##-###.## dollars an ounce.","Hong Kong gold prices opened higher on Thursday, with rates ranging from ###.##-###.## US dollars per ounce, up from Wednesday's close of ###.##-###.## dollars an ounce.",89,49,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"japanese share prices rose #.## percent in morning trade thursday to hit the highest level in more than five years as fresh gains on wall street fanned upbeat investor sentiment here , dealers said .",tokyo shares rise #.## percent in morning trade,":
+Japanese share prices surged by #.## percent in Thursday's morning trade, reaching their highest level in over five years. This increase followed fresh gains on Wall Street, which bolstered investor sentiment, according to dealers.",":
+Japanese share prices surged by #.## percent in Thursday's morning trade, reaching their highest level in over five years. This increase followed fresh gains on Wall Street, which bolstered investor sentiment, according to dealers.",87,51,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+a top police officer appealed thursday to supermodel kate moss to return to britain and face arrest amid allegations of UNK .,british police seek to arrest moss amid cocaine inquiry,"to britain and face arrest amid allegations of UNK .
+
+Summary:
+Top police officer appeals to supermodel Kate Moss to return to Britain to face arrest over unspecified allegations.","to britain and face arrest amid allegations of UNK .
+
+Summary:
+Top police officer appeals to supermodel Kate Moss to return to Britain to face arrest over unspecified allegations.",74,64,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+the cerebral hemorrhage suffered by israeli prime minister ariel sharon occurs when a defective artery in the brain bursts : it is among the deadliest of the major types of stroke .,key facts about hemorrhagic stroke,"stroke .
+
+Summary:
+Israeli Prime Minister Ariel Sharon suffered a cerebral hemorrhage, a severe type of stroke caused by a burst artery in the brain.","stroke .
+
+Summary:
+Israeli Prime Minister Ariel Sharon suffered a cerebral hemorrhage, a severe type of stroke caused by a burst artery in the brain.",84,54,138,0.10205737362593936,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"hong kong share prices opened #.## percent higher thursday on follow-through interest in properties after wednesday 's sharp gains on abating interest rate worries , dealers said .",hong kong shares open higher as rate worries ease,"ating interest rate worries , dealers said .
+
+Summary:
+Hong Kong share prices opened 2.5% higher on Thursday, driven by follow-through interest in properties following Wednesday's significant gains. This increase was attributed to easing interest rate concerns, according to dealers.","ating interest rate worries , dealers said .
+
+Summary:
+Hong Kong share prices opened 2.5% higher on Thursday, driven by follow-through interest in properties following Wednesday's significant gains. This increase was attributed to easing interest rate concerns, according to dealers.",84,56,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"trade between south korea and its communist neighbor north korea doubled last year , totalling more than one billion dollars for the first time , official data showed .",inter-korean trade doubles to one billion dollars in ####,"than one billion dollars for the first time , official data showed .
+
+Summary:
+South Korea's trade with North Korea doubled last year, reaching over one billion dollars for the first time, according to official data.","than one billion dollars for the first time , official data showed .
+
+Summary:
+South Korea's trade with North Korea doubled last year, reaching over one billion dollars for the first time, according to official data.",79,61,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"two new vaccines have been shown effective against rotavirus , which is responsible for a half-million infant deaths in poor countries each year , research studies published wednesday said .",new vaccines for key UNK virus shown effective,"poor countries each year , research studies published wednesday said .
+
+Summary:
+Two new vaccines have demonstrated effectiveness against rotavirus, a cause of half-a-million infant deaths annually in poor countries, according to research studies published on Wednesday.","poor countries each year , research studies published wednesday said .
+
+Summary:
+Two new vaccines have demonstrated effectiveness against rotavirus, a cause of half-a-million infant deaths annually in poor countries, according to research studies published on Wednesday.",80,60,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"china has begun a push to promote small , low-emission cars as oil prices remain high and environmental concerns grow over the nation 's fast-rising auto culture , state press reported thursday .",china pushes smaller cars as environmental concerns grow,"state press reported thursday .
+
+Summary:
+China is promoting small, low-emission cars due to high oil prices and growing environmental concerns about the nation's rapidly expanding auto culture, according to state press reports.","state press reported thursday .
+
+Summary:
+China is promoting small, low-emission cars due to high oil prices and growing environmental concerns about the nation's rapidly expanding auto culture, according to state press reports.",86,54,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+israeli prime minister ariel sharon was fighting for his life thursday after suffering a massive stroke .,major events in sharon 's life,":
+israeli prime minister ariel sharon was fighting for his life thursday after suffering a massive stroke .
+
+Summary:
+Israeli PM Ariel Sharon fought for survival after suffering a severe stroke on Thursday.",":
+israeli prime minister ariel sharon was fighting for his life thursday after suffering a massive stroke .
+
+Summary:
+Israeli PM Ariel Sharon fought for survival after suffering a severe stroke on Thursday.",69,71,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the dollar regained some lost ground in asian trade thursday in what was seen as a largely technical rebound after weakness prompted by expectations of a shift in us interest rate policy , dealers said .",dollar regains ground in asian trade,"us interest rate policy , dealers said .
+
+Summary:
+The dollar recovered in Asian trade on Thursday, following a technical rebound after recent weakness. This recovery came amidst expectations of a shift in U.S. interest rate policy.","us interest rate policy , dealers said .
+
+Summary:
+The dollar recovered in Asian trade on Thursday, following a technical rebound after recent weakness. This recovery came amidst expectations of a shift in U.S. interest rate policy.",84,56,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"a ##-million-dollar lawsuit filed by superstar michael jackson against a us businessman over ownership of a bounty of jackson family memorabilia has been tossed out of court , documents showed wednesday .",judge tosses out michael jackson 's memorabilia lawsuit,", documents showed wednesday .
+
+Summary:
+Michael Jackson's multi-million-dollar lawsuit against a US businessman over ownership of Jackson family memorabilia has been dismissed by the court, according to documents released on Wednesday.",", documents showed wednesday .
+
+Summary:
+Michael Jackson's multi-million-dollar lawsuit against a US businessman over ownership of Jackson family memorabilia has been dismissed by the court, according to documents released on Wednesday.",86,54,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+us president george w. bush defied congress again wednesday as he placed a slew of controversial political allies in key defense and foreign policy posts in his administration by circumventing the requisite approval process in the senate .,bush defies congress names defense foreign policy posts,"senate .
+
+Summary:
+George W. Bush, as U.S. President, bypassed Congress to appoint several controversial political allies to key defense and foreign policy positions in his administration.","senate .
+
+Summary:
+George W. Bush, as U.S. President, bypassed Congress to appoint several controversial political allies to key defense and foreign policy positions in his administration.",90,50,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"oil prices were slightly easier in asian trade thursday , marking time ahead of key us stockpile figures and after resolution of the russia-ukraine gas pricing dispute , dealers said .",oil prices were easier in asian trade,"gas pricing dispute , dealers said .
+
+Summary:
+Oil prices experienced slight ease in Asian trade on Thursday. This movement came before significant U.S. stockpile data and following the resolution of the Russia-Ukraine gas pricing dispute.","gas pricing dispute , dealers said .
+
+Summary:
+Oil prices experienced slight ease in Asian trade on Thursday. This movement came before significant U.S. stockpile data and following the resolution of the Russia-Ukraine gas pricing dispute.",85,55,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"us veteran and eight-time grand slam winner andre agassi has withdrawn from this month 's australian open due to a nagging ankle injury , his management team announced thursday .",agassi withdraws from australian open,"injury , his management team announced thursday .
+
+Summary:
+Andre Agassi, an eight-time Grand Slam winner, has withdrawn from the Australian Open due to a persistent ankle injury, as announced by his management team on Thursday.","injury , his management team announced thursday .
+
+Summary:
+Andre Agassi, an eight-time Grand Slam winner, has withdrawn from the Australian Open due to a persistent ankle injury, as announced by his management team on Thursday.",83,57,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"japanese share prices rose #.## percent in morning trade thursday to hit their highest level in more than five years as fresh gains on wall street fanned upbeat investor sentiment , dealers said .",tokyo shares rise #.## percent in morning trade,"investor sentiment , dealers said .
+
+Summary:
+Japanese share prices surged by #.## percent in Thursday's morning trade, reaching their highest level in over five years. This increase followed fresh gains on Wall Street, which bolstered investor sentiment, according to dealers.","investor sentiment , dealers said .
+
+Summary:
+Japanese share prices surged by #.## percent in Thursday's morning trade, reaching their highest level in over five years. This increase followed fresh gains on Wall Street, which bolstered investor sentiment, according to dealers.",86,54,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"a securities firm in tokyo said thursday that one of its traders had mistakenly bought #,### times more shares in a company than intended in the latest botched trade to hit asia 's largest bourse .",another botched trade on tokyo stock market,".
+
+Summary:
+A Tokyo securities firm reported a trading error on Thursday, where a trader mistakenly bought a significantly larger number of shares in a company than intended. This marks another botched trade affecting Asia's largest stock exchange.",".
+
+Summary:
+A Tokyo securities firm reported a trading error on Thursday, where a trader mistakenly bought a significantly larger number of shares in a company than intended. This marks another botched trade affecting Asia's largest stock exchange.",91,49,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"researchers in australia said thursday they had grown new breasts in mice after discovering the stem cell responsible for UNK tissue , a find which could pave the way for new treatments for breast cancer .",scientists locate stem cell which may hold secrets of breast cancer,"new treatments for breast cancer .
+
+Summary:
+Australian researchers successfully grew new breasts in mice by identifying the stem cell responsible for breast tissue. This discovery could lead to new breast cancer treatments.","new treatments for breast cancer .
+
+Summary:
+Australian researchers successfully grew new breasts in mice by identifying the stem cell responsible for breast tissue. This discovery could lead to new breast cancer treatments.",86,54,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"doctors are at the final stages of an operation on israeli prime minister ariel sharon to remove blood from his brain following a massive stroke , a hospital spokesman said thursday .",doctors at final stages of sharon surgery,"a hospital spokesman said thursday .
+
+Summary:
+Doctors are in the final stages of an operation on Israeli Prime Minister Ariel Sharon. The surgery aims to remove blood from his brain following a massive stroke.","a hospital spokesman said thursday .
+
+Summary:
+Doctors are in the final stages of an operation on Israeli Prime Minister Ariel Sharon. The surgery aims to remove blood from his brain following a massive stroke.",85,55,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the world 's largest chipmaker intel has asked the vietnamese government for a license to build a chip plant worth ### million dollars in southern ho chi minh city , a government official said thursday .",intel to invest ### mln dlr in chip plant in vietnam,"official said thursday .
+
+Summary:
+Intel requests Vietnamese government license for a $### million chip plant in Ho Chi Minh City.","official said thursday .
+
+Summary:
+Intel requests Vietnamese government license for a $### million chip plant in Ho Chi Minh City.",87,53,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"an intrepid british oarsman 's bid to row round antarctica ended after just ## kilometres -lrb- ## miles -rrb- when he unexpectedly collided with the falkland islands , british newspapers reported thursday .",british UNK UNK crashes after ## km,"A British oarsman's attempt to row around Antarctica ended prematurely after just a few hundred kilometers, when he collided with the Falkland Islands, as reported by British newspapers.","A British oarsman's attempt to row around Antarctica ended prematurely after just a few hundred kilometers, when he collided with the Falkland Islands, as reported by British newspapers.",95,45,140,0.09438857174973236,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"malaysian experts say they may have discovered a new species of UNK , the world 's largest flower which is famous for its putrid smell , according to a report thursday .",malaysia probes possible new species of world 's largest flower,".
+
+Summary:
+Malaysian experts potentially discovered a new species of the world's largest flower, known for its strong, unpleasant odor.",".
+
+Summary:
+Malaysian experts potentially discovered a new species of the world's largest flower, known for its strong, unpleasant odor.",85,48,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"india , rather than china , is viewed as the sleeping giant of the golf world with huge scope for development , asian tour chief executive louis martin said .",india more than china seen as sleeping giant of golf world,"asian tour chief executive louis martin said .
+
+Summary:
+India is considered the sleeping giant in the golf world, with significant potential for growth, according to Asian Tour CEO Louis Martin.","asian tour chief executive louis martin said .
+
+Summary:
+India is considered the sleeping giant in the golf world, with significant potential for growth, according to Asian Tour CEO Louis Martin.",78,55,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"police in one of china 's major cities are up in arms over a new order to disclose many details of their private lives as part of efforts to fight corruption , state press reported thursday .",chinese police angry over new privacy laws,":
+Chinese police in a major city protest a new order requiring disclosure of personal details to combat corruption, as reported by state press.",":
+Chinese police in a major city protest a new order requiring disclosure of personal details to combat corruption, as reported by state press.",87,46,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+veteran nick faldo is hoping that some of his legendary matchplay expertise rubs off on several of his UNK european teammates as they battle asia in the first royal trophy this weekend .,matchplay maestro faldo comes in from the cold for royal trophy,"Summary:
+Veteran golfer Nick Faldo aims to impart his matchplay skills to his European teammates, as they compete against Asia in the first Royal Trophy event this weekend.","Summary:
+Veteran golfer Nick Faldo aims to impart his matchplay skills to his European teammates, as they compete against Asia in the first Royal Trophy event this weekend.",86,47,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"four-time australian open champion andre agassi succumbed to a long-standing ankle injury and officially withdrew from the first grand slam event of the year , his management company said thursday .",agassi pulls out of australian open nadal in doubt,"ursday .
+
+Summary:
+Four-time Australian Open champion Andre Agassi withdrew from the first Grand Slam event of the year due to a long-standing ankle injury, according to his management company on Thursday.","ursday .
+
+Summary:
+Four-time Australian Open champion Andre Agassi withdrew from the first Grand Slam event of the year due to a long-standing ankle injury, according to his management company on Thursday.",84,49,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"israeli prime minister ariel sharon will remain in the operating theater for several more hours and is in a `` serious situation '' after suffering a massive stroke , a hospital spokesman said thursday .",sharon to remain in surgery for several hours,":
+Israeli Prime Minister Ariel Sharon is in the operating theater for several more hours following a massive stroke, according to a hospital spokesman on Thursday.",":
+Israeli Prime Minister Ariel Sharon is in the operating theater for several more hours following a massive stroke, according to a hospital spokesman on Thursday.",87,46,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"devastating blizzards have forced the evacuation of ##,### people in a largely muslim region of western china , a government official said thursday .","blizzards force evacuation of ##,### people in muslim part of china",", a government official said thursday .
+
+Summary:
+Blizzards in western China have led to the evacuation of over 10,000 people, predominantly from a Muslim region, according to a government official.",", a government official said thursday .
+
+Summary:
+Blizzards in western China have led to the evacuation of over 10,000 people, predominantly from a Muslim region, according to a government official.",78,55,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"new zealand and sri lanka have an eye on future targets going into their fourth one-day international here friday , with new zealand having already wrapped up the five-match series .",new zealand sri lanka looks to future goals,"series .
+
+Summary:
+New Zealand and Sri Lanka prepare for their fourth one-day international, as New Zealand has already secured the five-match series.","series .
+
+Summary:
+New Zealand and Sri Lanka prepare for their fourth one-day international, as New Zealand has already secured the five-match series.",84,49,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"gunmen shot dead seven tribesmen thursday in a restive tribal region along the pakistan-afghanistan border where the military is hunting al-qaeda-linked militants , officials said .",seven tribesmen shot dead in pakistani tribal area,".
+
+Summary:
+Seven tribesmen were killed by gunmen in a tribal region along the Pakistan-Afghanistan border. The area is restive and the military is pursuing al-Qaeda-linked militants, according to officials.",".
+
+Summary:
+Seven tribesmen were killed by gunmen in a tribal region along the Pakistan-Afghanistan border. The area is restive and the military is pursuing al-Qaeda-linked militants, according to officials.",85,48,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"thailand will discuss lifting its ban on us beef , imposed two years ago over mad cow fears , when negotiators from the two nations meet next week for free trade talks , health officials said thursday .",thailand may lift ban on us beef,"Thailand plans to discuss lifting its two-year ban on US beef, during upcoming free trade negotiations next week.","Thailand plans to discuss lifting its two-year ban on US beef, during upcoming free trade negotiations next week.",88,45,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"floods , typhoons and other natural disasters killed #,### people in china last year , the highest casualty figure since #### , a top government official said thursday .","natural disasters claim #,### lives in china in #### four-year high","thursday .
+
+Summary:
+Last year, China experienced severe natural disasters, including floods and typhoons, resulting in the highest number of casualties since ####. A top government official announced this on Thursday.","thursday .
+
+Summary:
+Last year, China experienced severe natural disasters, including floods and typhoons, resulting in the highest number of casualties since ####. A top government official announced this on Thursday.",83,50,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+australian fast bowler glenn mcgrath was facing his sixth disciplinary hearing in eight years thursday after being reported by the match umpires in the third test against south africa here .,mcgrath reported for obscene behavior in third test,"Summary:
+Glenn McGrath, an Australian fast bowler, faced his sixth disciplinary hearing in eight years. This hearing occurred on Thursday after McGrath was reported by match umpires during the third test against South Africa.","Summary:
+Glenn McGrath, an Australian fast bowler, faced his sixth disciplinary hearing in eight years. This hearing occurred on Thursday after McGrath was reported by match umpires during the third test against South Africa.",86,47,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"australian share prices closed #.## percent lower thursday as investors took some modest profits after a series of record breaking performances , dealers said .",australian shares slip on profit-taking,"series of record breaking performances , dealers said .
+
+Summary:
+Australian share prices ended Thursday down by #.## percent, as investors cashed in on modest profits following a string of record-high share prices.","series of record breaking performances , dealers said .
+
+Summary:
+Australian share prices ended Thursday down by #.## percent, as investors cashed in on modest profits following a string of record-high share prices.",77,56,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"another cambodian rights activist was charged thursday with defaming prime minister hun sen , as critics warned the country would become a pariah state if it continued to crush dissent .",third cambodian rights activist charged with defaming pm hun sen,"to crush dissent .
+
+Summary:
+A Cambodian rights activist was charged with defamation against Prime Minister Hun Sen. Critics warn that continued suppression of dissent could make Cambodia an international pariah.","to crush dissent .
+
+Summary:
+A Cambodian rights activist was charged with defamation against Prime Minister Hun Sen. Critics warn that continued suppression of dissent could make Cambodia an international pariah.",82,51,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+the netherlands was gifted a berth in the final of the hopman cup mixed teams tennis tournament on thursday after german star nicolas kiefer pulled out of their group b tie here with back spasms .,netherlands reach hopman cup final after kiefer pulls out,"The Netherlands secured a spot in the Hopman Cup final on Thursday, following the withdrawal of German player Nicolas Kiefer due to back spasms.","The Netherlands secured a spot in the Hopman Cup final on Thursday, following the withdrawal of German player Nicolas Kiefer due to back spasms.",89,44,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the dollar regained some lost ground in asian trade thursday in what was seen as a largely technical rebound after weakness prompted by expectations of a shift in us interest rate policy , dealers said .",dollar regains ground but remains under pressure in asian trade,"said .
+
+Summary:
+The dollar recovered in Asian trade on Thursday, following a technical rebound after recent weakness. This recovery was attributed to dealers' expectations of a shift in U.S. interest rate policy.","said .
+
+Summary:
+The dollar recovered in Asian trade on Thursday, following a technical rebound after recent weakness. This recovery was attributed to dealers' expectations of a shift in U.S. interest rate policy.",84,49,133,0.0924660437485727,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"japanese share prices rose #.## percent thursday to UNK highest closing high for more than five years as fresh gains on wall street fanned upbeat investor sentiment , dealers said .",tokyo shares close up #.## percent,"street fanned upbeat investor sentiment , dealers said .
+
+Summary:
+Japanese share prices reached their highest closing level in over five years, with a rise of #.## percent on Thursday, driven by Wall Street gains and positive investor sentiment.","street fanned upbeat investor sentiment , dealers said .
+
+Summary:
+Japanese share prices reached their highest closing level in over five years, with a rise of #.## percent on Thursday, driven by Wall Street gains and positive investor sentiment.",84,61,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"former world number four jelena dokic has been forced out of next week 's canberra international with an adductor injury which was aggravated in auckland this week , organisers said thursday .",injured dokic out of canberra international,"this week , organisers said thursday .
+
+Summary:
+Jelena Dokic, a former world number four, has withdrawn from the Canberra International due to an adductor injury worsened in Auckland.","this week , organisers said thursday .
+
+Summary:
+Jelena Dokic, a former world number four, has withdrawn from the Canberra International due to an adductor injury worsened in Auckland.",86,59,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+rain forced the fourth day 's play to be abandoned at #:## pm -lrb- #### gmt -rrb- in the third test between australia and south africa at the sydney cricket ground on thursday .,play abandoned for the day in third test due to rain,"ursday .
+
+Summary:
+Rain caused the abandonment of the fourth day's play in the third test between Australia and South Africa at the Sydney Cricket Ground on Thursday.","ursday .
+
+Summary:
+Rain caused the abandonment of the fourth day's play in the third test between Australia and South Africa at the Sydney Cricket Ground on Thursday.",92,53,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the death toll from flash floods that devastated villages in indonesia 's east java province has risen to ## , police said thursday .",indonesian flood death toll rises to ##,"floods that devastated villages in indonesia 's east java province has risen to ## , police said thursday .
+
+Summary:
+Flash floods in Indonesia's East Java province have caused a death toll of ##, according to police on Thursday.","floods that devastated villages in indonesia 's east java province has risen to ## , police said thursday .
+
+Summary:
+Flash floods in Indonesia's East Java province have caused a death toll of ##, according to police on Thursday.",73,72,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+lebanese newspapers warned thursday that israel faced a period of political turmoil with prime minister ariel sharon fighting for his life after suffering a massive brain hemorrhage .,lebanon warns of strife with sharon at death 's door,"fighting for his life after suffering a massive brain hemorrhage .
+
+Summary:
+Lebanese newspapers cautioned on Thursday that Israel is entering a period of political unrest. This follows Prime Minister Ariel Sharon's critical condition after suffering a severe brain hemorrhage.","fighting for his life after suffering a massive brain hemorrhage .
+
+Summary:
+Lebanese newspapers cautioned on Thursday that Israel is entering a period of political unrest. This follows Prime Minister Ariel Sharon's critical condition after suffering a severe brain hemorrhage.",82,63,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"a second person has died from bird flu at a hospital in eastern turkey , a doctor there said thursday .",turkey reports second death from bird flu,".
+
+Input:
+a second person has died from bird flu at a hospital in eastern turkey , a doctor there said thursday .
+
+Summary:
+A second bird flu fatality has occurred at an eastern Turkey hospital, according to a doctor on Thursday.",".
+
+Input:
+a second person has died from bird flu at a hospital in eastern turkey , a doctor there said thursday .
+
+Summary:
+A second bird flu fatality has occurred at an eastern Turkey hospital, according to a doctor on Thursday.",69,76,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"vince young scampered eight yards for a touchdown with ## seconds left , lifting second-ranked texas to a ##-## win over usc to give the longhorns their first national championship since #### .",longhorns lasso usc to win first national title in ## years,"their first national championship since #### .
+
+Summary:
+Vince Young scored an 8-yard touchdown with seconds left, securing Texas' first national championship since ####.","their first national championship since #### .
+
+Summary:
+Vince Young scored an 8-yard touchdown with seconds left, securing Texas' first national championship since ####.",87,58,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the final results of iraq 's december general elections are due within the next four days , a member of the iraqi electoral commission said on thursday .",iraqi election final results out within four days,"a member of the iraqi electoral commission said on thursday .
+
+Summary:
+The final results of Iraq's December general elections are expected within the next four days, according to a member of the Iraqi Electoral Commission.","a member of the iraqi electoral commission said on thursday .
+
+Summary:
+The final results of Iraq's December general elections are expected within the next four days, according to a member of the Iraqi Electoral Commission.",80,65,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+israeli deputy prime minister ehud olmert was chairing an emergency cabinet meeting thursday as prime minister ariel sharon was battling for his life in a jerusalem hospital .,olmert chairs emergency israeli cabinet meeting,"for his life in a jerusalem hospital .
+
+Summary:
+Deputy Prime Minister Ehud Olmert led an emergency cabinet meeting while Prime Minister Ariel Sharon fought for his life in a Jerusalem hospital.","for his life in a jerusalem hospital .
+
+Summary:
+Deputy Prime Minister Ehud Olmert led an emergency cabinet meeting while Prime Minister Ariel Sharon fought for his life in a Jerusalem hospital.",85,60,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+hopman cup director paul mcnamee has given the electronic `` hawk-eye '' line-calling system the thumbs up after it was used for the first time in an elite-level event here this week .,hopman cup boss gives hawk-eye a nod and a wink,"elite-level event here this week .
+
+Summary:
+Paul McNamee, Hopman Cup director, approved the ""Hawk-eye"" line-calling system after its debut in an elite-level event.","elite-level event here this week .
+
+Summary:
+Paul McNamee, Hopman Cup director, approved the ""Hawk-eye"" line-calling system after its debut in an elite-level event.",87,58,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+israel 's media declared an end thursday to the tumultuous ariel sharon era as the prime minister lay fighting for his life after suffering a massive brain UNK .,israeli media declare end to sharon era,"for his life after suffering a massive brain UNK .
+
+Summary:
+Israel's media announced the end of Ariel Sharon's tumultuous tenure as prime minister. Sharon was battling for his life following a massive brain hemorrhage.","for his life after suffering a massive brain UNK .
+
+Summary:
+Israel's media announced the end of Ariel Sharon's tumultuous tenure as prime minister. Sharon was battling for his life following a massive brain hemorrhage.",83,62,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"the philippine government said thursday it wants a `` swift resolution '' of journalists ' murders , after a global press watchdog said the country was the world 's deadliest place for journalists next to iraq in #### .",philippines vows swift resolution of press murders,"in #### .
+
+Summary:
+The Philippine government seeks a quick resolution to journalists' murders, following a report by a global press watchdog that ranked the Philippines as the world's deadliest place for journalists, second only to Iraq.","in #### .
+
+Summary:
+The Philippine government seeks a quick resolution to journalists' murders, following a report by a global press watchdog that ranked the Philippines as the world's deadliest place for journalists, second only to Iraq.",91,54,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"south korea is to build up its submarine fleet by increasing the number of vessels and boosting their capability , the defense ministry said thursday .",south korea to build up submarine fleet,"fleet by increasing the number of vessels and boosting their capability , the defense ministry said thursday .
+
+Summary:
+South Korea plans to expand and enhance its submarine fleet, as announced by the defense ministry.","fleet by increasing the number of vessels and boosting their capability , the defense ministry said thursday .
+
+Summary:
+South Korea plans to expand and enhance its submarine fleet, as announced by the defense ministry.",75,70,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"basf , the world 's biggest chemicals company , prefers that its planned takeover of us firm engelhard was a friendly rather than a hostile move , basf chairman juergen hambrecht said in a newspaper interview published on thursday .",basf prefers friendly takeover of us firm engelhard,"Basf, the world's largest chemicals company, aims for a friendly takeover of US firm Engelhard, rather than a hostile one. This preference was expressed by Basf Chairman Juergen Hambrecht in a recent newspaper interview.","Basf, the world's largest chemicals company, aims for a friendly takeover of US firm Engelhard, rather than a hostile one. This preference was expressed by Basf Chairman Juergen Hambrecht in a recent newspaper interview.",97,48,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"dubai came to a halt on thursday as the emirate prepared for the funeral of its ruler sheikh maktoum bin rashed al-maktoum , who died wednesday of natural causes while on a visit to australia .",dubai to bury uae vice president maktoum,"Dubai suspended normal activities on Thursday to prepare for the funeral of Sheikh Maktoum bin Rashed Al-Maktoum, who passed away in Australia on Wednesday due to natural causes.","Dubai suspended normal activities on Thursday to prepare for the funeral of Sheikh Maktoum bin Rashed Al-Maktoum, who passed away in Australia on Wednesday due to natural causes.",97,48,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"retail sales in germany fell in november , underlining the ongoing fragility of consumer sentiment in the eurozone 's biggest economy , data showed on thursday .",german retail sales down in november,"the eurozone 's biggest economy , data showed on thursday .
+
+Summary:
+Germany's retail sales dropped in November, reflecting the continued vulnerability of consumer sentiment in the eurozone's largest economy, according to Thursday's data.","the eurozone 's biggest economy , data showed on thursday .
+
+Summary:
+Germany's retail sales dropped in November, reflecting the continued vulnerability of consumer sentiment in the eurozone's largest economy, according to Thursday's data.",80,65,145,0.10066010531227221,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"international aid agencies on thursday stepped up appeals for urgent intervention in drought-hit northern kenya , warning of mass starvation in the region where at least ## people have already died of hunger and related illness amid fears of a major famine .",aid groups sound famine disaster warning for northern kenya,"International aid agencies are intensifying calls for immediate assistance in drought-stricken northern Kenya. They warn of widespread starvation, with concerns over a major famine as at least a certain number of people have already succumbed to hunger and related diseases.","International aid agencies are intensifying calls for immediate assistance in drought-stricken northern Kenya. They warn of widespread starvation, with concerns over a major famine as at least a certain number of people have already succumbed to hunger and related diseases.",93,49,142,0.3823346412536921,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"american skeleton coach tim nardiello wo n't travel with his athletes to a competition in europe next week , the new york times reported on wednesday .",american skeleton coach wo n't travel with team,"next week , the new york times reported on wednesday .
+
+Summary:
+American skeleton coach Tim Nardiello will not accompany his athletes to an upcoming European competition, as reported by The New York Times.","next week , the new york times reported on wednesday .
+
+Summary:
+American skeleton coach Tim Nardiello will not accompany his athletes to an upcoming European competition, as reported by The New York Times.",78,64,142,0.3823346412536921,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"britain 's top swimming coach bill sweetenham , who was cleared by an independent investigation of bullying members of the british team , still has questions to answer his employers when he returns at the end of the month .",cleared UNK facing another grilling from british swim bosses,":
+Top British swimming coach Bill Sweetenham, cleared of bullying allegations by an independent investigation, faces questions from his employers upon his return at the end of the month.",":
+Top British swimming coach Bill Sweetenham, cleared of bullying allegations by an independent investigation, faces questions from his employers upon his return at the end of the month.",91,51,142,0.3823346412536921,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+"israeli prime minister ariel sharon remains in a serious but stable condition after undergoing surgery following a massive brain hemorrhage , a hospital spokesman said thursday .",sharon still in serious condition after surgery,"hemorrhage , a hospital spokesman said thursday .
+
+Summary:
+Israeli PM Ariel Sharon is in serious but stable condition post-surgery for a massive brain hemorrhage, as per a hospital spokesman on Thursday.","hemorrhage , a hospital spokesman said thursday .
+
+Summary:
+Israeli PM Ariel Sharon is in serious but stable condition post-surgery for a massive brain hemorrhage, as per a hospital spokesman on Thursday.",80,62,142,0.3823346412536921,0.22706776295852818,0.22706776295852818,0.08184055152726097,0.2009805367070561
+
+metric,value
+task,summarization
+strategy,cot
+model,glm4_9b
+dataset,gigaword
+num_samples,100
+acc,0.22706776295852818
+rouge1,0.22706776295852818
+rouge2,0.08184055152726097
+rougeL,0.2009805367070561
+metric_backend,rouge_score
+total_input_tokens,8389
+total_output_tokens,5635
+total_tokens,14024
+total_runtime_sec,10.869203937996645
+avg_input_tokens,83.89
+avg_output_tokens,56.35
+avg_total_tokens,140.24
+avg_runtime_sec,0.10869203937996645
