@@ -18,10 +18,20 @@ MODEL_REGISTRY: Dict[str, Dict[str, Any]] = {
         "torch_dtype": "bfloat16",
         "trust_remote_code": True,
     },
+    "qwen3_5_4b": {
+        "path": "/mnt/huawei/ymb/model/qwen3.5-4b/model",
+        "torch_dtype": "bfloat16",
+        "trust_remote_code": True,
+    },
+    "qwen3_5_9b": {
+        "path": "/mnt/huawei/ymb/model/qwen3.5-9b/model",
+        "torch_dtype": "bfloat16",
+        "trust_remote_code": True,
+    },
 }
 
 
-DEFAULT_MODELS: List[str] = ["glm4_9b", "llama3_1_8b"]
+DEFAULT_MODELS: List[str] = ["glm4_9b", "llama3_1_8b", "qwen3_5_4b", "qwen3_5_9b"]
 
 
 DEFAULT_BASELINES: List[str] = ["cot", "sc-cot", "sv-cot", "few-shot-cot", "random", "fixed"]

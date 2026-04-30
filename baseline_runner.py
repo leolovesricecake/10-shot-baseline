@@ -368,6 +368,7 @@ def generate_batch(
         "attention_mask": attention_mask,
         "max_new_tokens": max_new_tokens,
         "do_sample": do_sample,
+        "pad_token_id": tokenizer.eos_token_id,
     }
     if do_sample:
         generation_kwargs["temperature"] = temperature
@@ -428,7 +429,7 @@ def load_model(
     print(f"[INFO] Loaded model '{model_alias}' from: {model_path}")
     if logger is not None:
         logger.info(
-            "model_loaded",
+            f"model_loaded: {model_alias}",
             model_alias=model_alias,
             model_path=model_path,
             trust_remote_code=trust_remote_code,
@@ -509,7 +510,7 @@ def run_single_dataset(
         print(f"[SKIP] Existing file: {output_path}")
         if logger is not None:
             logger.info(
-                "dataset_skipped_existing",
+                f"dataset_skipped_existing: {dataset_name}",
                 model=model_alias,
                 baseline=strategy.name,
                 dataset=dataset_name,
@@ -524,7 +525,7 @@ def run_single_dataset(
             print(f"[SKIP] {exc}")
             if logger is not None:
                 logger.warning(
-                    "dataset_skipped_missing",
+                    f"dataset_skipped_missing: {dataset_name}",
                     model=model_alias,
                     baseline=strategy.name,
                     dataset=dataset_name,
@@ -535,7 +536,7 @@ def run_single_dataset(
 
     if logger is not None:
         logger.info(
-            "dataset_start",
+            f"dataset_start: {dataset_name}",
             model=model_alias,
             baseline=strategy.name,
             dataset=dataset_name,
@@ -582,7 +583,7 @@ def run_single_dataset(
     except Exception as exc:
         if logger is not None:
             logger.error(
-                "strategy_prepare_failed",
+                f"strategy_prepare_failed: {dataset_name}",
                 model=model_alias,
                 baseline=strategy.name,
                 dataset=dataset_name,
@@ -651,7 +652,7 @@ def run_single_dataset(
         except Exception as exc:
             if logger is not None:
                 logger.error(
-                    "dataset_batch_error",
+                    f"dataset_batch_error: {dataset_name}",
                     model=model_alias,
                     baseline=strategy.name,
                     dataset=dataset_name,
@@ -700,7 +701,7 @@ def run_single_dataset(
         print(f"[WARN] Empty test split for dataset '{dataset_name}'.")
         if logger is not None:
             logger.warning(
-                "dataset_empty_test_split",
+                f"dataset_empty_test_split: {dataset_name}",
                 model=model_alias,
                 baseline=strategy.name,
                 dataset=dataset_name,
@@ -764,7 +765,7 @@ def run_single_dataset(
     write_footer(output_path, footer_items)
     if logger is not None:
         logger.info(
-            "dataset_finished",
+            f"dataset_finished: {dataset_name}",
             model=model_alias,
             baseline=strategy.name,
             dataset=dataset_name,
@@ -841,7 +842,7 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
         for model_alias in options.models:
             tokenizer = None
             model = None
-            logger.info("model_started", message="Model loop started", model=model_alias)
+            logger.info(f"model_started: {model_alias}", message="Model loop started", model=model_alias)
             try:
                 if not options.dry_run:
                     try:
@@ -853,7 +854,7 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
                         )
                     except Exception as exc:
                         logger.error(
-                            "model_load_failed",
+                            f"model_load_failed: {model_alias}",
                             message=str(exc),
                             model=model_alias,
                             traceback=traceback.format_exc(),
@@ -870,7 +871,7 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
                 for baseline_name in options.baselines:
                     strategy = STRATEGY_REGISTRY[baseline_name]
                     logger.info(
-                        "baseline_started",
+                        f"baseline_started: {baseline_name}",
                         message="Baseline loop started",
                         model=model_alias,
                         baseline=baseline_name,
@@ -907,7 +908,7 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
                                 f"[ERROR] model={model_alias} baseline={baseline_name} dataset={dataset_name}: {exc}"
                             )
                             logger.error(
-                                "dataset_failed",
+                                f"dataset_failed: {dataset_name}",
                                 message=str(exc),
                                 model=model_alias,
                                 baseline=baseline_name,
@@ -928,14 +929,14 @@ def run_cli(default_baselines: Optional[Sequence[str]] = None) -> None:
                             if isinstance(exc, RetrievalInitializationError):
                                 raise
                     logger.info(
-                        "baseline_finished",
+                        f"baseline_finished: {baseline_name}",
                         message="Baseline loop finished",
                         model=model_alias,
                         baseline=baseline_name,
                     )
             finally:
                 release_model(model)
-                logger.info("model_finished", message="Model loop finished", model=model_alias)
+                logger.info(f"model_finished: {model_alias}", message="Model loop finished", model=model_alias)
     except Exception as exc:
         logger.error("run_fatal", message=str(exc), traceback=traceback.format_exc())
         run_failures.append({"stage": "run", "message": str(exc)})
